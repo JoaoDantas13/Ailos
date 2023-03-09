@@ -7,16 +7,35 @@ div {
   background: #165c7d;
 }
 
+.search {
+  color: #ffffff;
+}
+
+.search:hover {
+  color: #898989;
+  transition: 0.2s;
+}
+
+.icon-all:hover {
+  color: #ffffff;
+  transition: 0.2s;
+}
+
 .div-icons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 31px;
-  color: white;
-  margin-top: 86%;
+  gap: 30px;
+  color: #739db1;
+  margin-top: 5%;
   z-index: 1;
 }
 
 mat-icon {
   cursor: pointer;
+}
+
+img {
+  width: 80%;
+  border-radius: 16px;
 }

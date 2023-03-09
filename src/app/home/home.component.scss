@@ -79,6 +79,7 @@ input {
   order: 1;
   align-self: stretch;
   flex-grow: 0;
+  outline: none;
 }
 
 .btn-cadastrar {
@@ -96,6 +97,7 @@ input {
   color: #ffff;
   cursor: pointer;
   border: none;
+  margin-top: 18px;
 }
 
 .campos {
@@ -120,6 +122,7 @@ input {
   background: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 2px;
+  transition: all 0.3s;
 }
 
 .div-nome,
@@ -195,6 +198,14 @@ footer {
   cursor: pointer;
 }
 
+.p-mensagem-erro {
+  color: #c13018;
+}
+
+input.ng-dirty.ng-invalid {
+  border: 1px solid #c13018;
+}
+
 .btn-footer-iniciar {
   border: none;
   background-color: transparent;
@@ -219,7 +230,7 @@ footer {
 }
 
 .p-dados {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 a {
@@ -370,4 +381,12 @@ a {
 
 .step-name-inicio {
   color: #165c7d;
+}
+
+.div-logica-validacao {
+  position: absolute;
+}
+
+.validacaoBtn {
+  opacity: 0.4;
 }
