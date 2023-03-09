@@ -28,10 +28,10 @@ export class HomeComponent implements OnInit {
   }
 
   verificarCPf(): void {
-    const cpf = '45064339801';
+    const cpfValido = '45064339801';
     if (!this.formulario.valid) {
       this.toast.error({ detail: "Atenção!", summary: "CPF Inválido" })
-    } else if (this.formulario.get('cpf')?.value === cpf) {
+    } else if (this.formulario.get('cpf')?.value === cpfValido) {
       this.loading = true;
       setTimeout(() => {
         this.loading = false;
