@@ -1,0 +1,125 @@
+<div class="container">
+  <div class="div-geral-stepper">
+    <div class="stepper-wrapper">
+      <div class="stepper-item completed">
+        <div class="step-counter"></div>
+        <div class="step-name-inicio">Inicio</div>
+      </div>
+      <div class="stepper-item">
+        <div class="step-counter"></div>
+        <div class="step-name">Documentos</div>
+      </div>
+      <div class="stepper-item">
+        <div class="step-counter"></div>
+        <div class="step-name">Dados cadastrais</div>
+      </div>
+      <div class="stepper-item">
+        <div class="step-counter"></div>
+        <div class="step-name">Admissão</div>
+      </div>
+    </div>
+  </div>
+  <div class="geral">
+    <div class="formulario">
+      <h4>Informe o CPF do futuro cooperado (a)</h4>
+      <div>
+        <p class="p-dados">
+          Se necessário, você poderá duplicar uma conta existente ou pausar e
+          retomar este cadastro futuramente. <br />Digite apenas os números (sem
+          pontos ou traços).
+        </p>
+      </div>
+      <div class="campos">
+        <form [formGroup]="formulario">
+          <label>CPF</label>
+          <input
+            type="text"
+            placeholder="000.000.000-00"
+            formControlName="cpf"
+            mask="000.000.000-00"
+          />
+          <p *ngIf="cpf?.errors?.['cpfInvalido']">Digite um CPF válido</p>
+        </form>
+        <div
+          class="div-button"
+          [ngClass]="cpf?.errors?.['cpfInvalido'] === true ? 'teste':''"
+        >
+          <button
+            (click)="verificarCPf()"
+            [disabled]="!formulario.valid"
+            class="btn-cadastrar"
+          >
+            <span class="loader" *ngIf="loading"></span>
+            <span [ngClass]="loading == true ? 'noneText' : ''"
+              >Consultar por CPF</span
+            >
+          </button>
+        </div>
+      </div>
+      <div class="div-geral-dados">
+        <div class="div-dados" *ngIf="dados">
+          <h3>Situação cadastral do CPF</h3>
+          <p class="p-dados">Consulta na Receita Federal</p>
+          <div class="div-nome">
+            <div>
+              <mat-icon matBadgeColor="warn">person</mat-icon>
+            </div>
+            <div>
+              <p>Nome</p>
+              <h5>João Vitor Dantas</h5>
+            </div>
+          </div>
+          <div class="div-cpf">
+            <div>
+              <mat-icon matBadge="15" class="icon-check"
+                >check_circle_outline</mat-icon
+              >
+            </div>
+            <div>
+              <p>Situação do CPF</p>
+              <h5>Regular</h5>
+            </div>
+          </div>
+        </div>
+        <div class="div-dados" *ngIf="dados">
+          <h3>Conta aplicação</h3>
+          <p class="p-dados">Cooperativa Viacredi</p>
+          <div class="div-nome">
+            <div>
+              <mat-icon matBadgeColor="warn">credit_card</mat-icon>
+            </div>
+            <div>
+              <p>Número da conta</p>
+              <h5>557932-4</h5>
+            </div>
+          </div>
+          <a href="">Duplicar conta</a>
+        </div>
+        <div class="div-dados" *ngIf="dados">
+          <h3>Conta corrente</h3>
+          <p class="p-dados">Cooperativa Viacredi</p>
+          <div class="div-nome">
+            <div>
+              <mat-icon matBadgeColor="warn">credit_card</mat-icon>
+            </div>
+            <div>
+              <p>Número da conta</p>
+              <h5>778461-8</h5>
+            </div>
+          </div>
+          <a href="">Duplicar conta</a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="div-geral-footer">
+        <div class="div-footer-btn-iniciar" *ngIf="dados">
+          <button class="btn-footer-iniciar">Inicar nova admissão</button>
+        </div>
+        <div class="div-footer-btn">
+          <button class="btn-footer">Dicas para admissão</button>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

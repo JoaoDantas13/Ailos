@@ -1,0 +1,22 @@
+div {
+  position: absolute;
+  width: 100px;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  background: #165c7d;
+}
+
+.div-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 31px;
+  color: white;
+  margin-top: 86%;
+  z-index: 1;
+}
+
+mat-icon {
+  cursor: pointer;
+}
